@@ -1675,7 +1675,7 @@ export function startUiServer(port: number, toolClient: ToolClient): Server {
     }
   });
 
-  const bindAddress = process.env.UI_BIND_ADDRESS ?? "0.0.0.0";
+  const bindAddress = process.env.UI_BIND_ADDRESS ?? "127.0.0.1";
   server.listen(port, bindAddress, () => {
     const displayUrl = bindAddress === "0.0.0.0" ? `http://<your-ip>:${port}` : `http://${bindAddress}:${port}`;
     console.log(`[mission-control] ui listening at ${displayUrl}`);
